@@ -3,18 +3,20 @@
   <head>
     <title>Callme</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content=“width=device-width”>
   </head>
   <body>
-    
+    <header>
     <a href="/"><h1>callme</h1></a>
       <ul>
+        .envファイル実装
         <a href="/about"><li>callmeとは</li></a>
+        <a href="/posts"><li>map</li></a>
+        <a href="/posts/new"><li>新規作成</li></a>
       </ul>
-
+    </header>
     <%= yield %>
   </body>
 </html>
