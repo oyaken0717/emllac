@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-  resources :posts do
+  root to: 'home#top'
+  get '/about', to: "home#about"
+
+  resources :sessions, only: [:new, :create, :show, :destroy]
+
+  resources :users, only: [:new, :create, :show, :index] do
     collection do
       post :confirm
     end
   end
 
-  root to: 'home#top'
-  get 'about' => "home#about"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :posts do
+    collection do
+      post :confirm
+    end
+  end
 end

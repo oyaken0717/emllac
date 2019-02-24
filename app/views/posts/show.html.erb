@@ -1,7 +1,9 @@
 <h1>詳細</h1>
 <%= link_to "編集", edit_post_path %>
-<%= link_to "削除", post_path(@post.id), method: :delete, data:{confirm: "本当に？"} %>
-
+<%= link_to "削除", post_path(@post.id), method: :delete, data:{confirm: "本当に削除しますか？"} %>
+<%= link_to "戻る", posts_path %>
+<br>
+<%= image_tag (@post.image.url) if @post.image.url %>
 <p>タイトル</p>
 <%= @post.title %>
 <br>

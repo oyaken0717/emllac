@@ -6,14 +6,18 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if params[:back]
+      @post = Post.new(post_params)
+    else
+      @post = Post.new
+    end
   end
 
   def show
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path, notice:"作成ができました。"
     else
@@ -37,6 +41,11 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice: "削除しました"
   end
 
+  def confirm
+    @post = Post.new(post_params)
+    render new if @post.invalid?
+  end
+
   private
 
   def set_post
@@ -44,7 +53,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :image, :image_cache)
   end
 
 end
