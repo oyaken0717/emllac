@@ -20,8 +20,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   private
-  
+
   def login
     if @user && @user.authenticate(user_params[:password])
       session[:user_id] = @user.id

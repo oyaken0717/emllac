@@ -1,6 +1,7 @@
 <h1><%= @user.name %>のページ</h1><br>
+<%= link_to "編集", edit_user_path(@user.id) %>
+<%= link_to "戻る", users_path %>
 <p>名前:</p>
 <%= @user.name %></p><br>
 <p>メールアドレス:</p>
 <%= @user.email %><br>
-<%= link_to "戻る", users_path %>
