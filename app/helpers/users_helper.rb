@@ -3,7 +3,7 @@ module UsersHelper
     if action_name == "new" || action_name == "confirm"
       confirm_users_path
     elsif action_name == "edit"
-      users_path
+      user_path
     end
   end
 end

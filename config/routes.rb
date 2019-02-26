@@ -4,11 +4,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :show, :destroy]
 
-  resources :users do
-    collection do
-      post :confirm
-    end
-  end
+  resources :users 
 
   resources :posts do
     collection do

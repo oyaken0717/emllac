@@ -1,12 +1,7 @@
 <h1>map</h1>
 <%= notice %><br>
-<%= link_to "新規作成 ", new_post_path %>
-<br>
-<table>
-  <th>タイトル</th>
+<%= link_to "新規作成 ", new_post_path %><br><br>
 <% @posts.each do |post|%>
-<tr>
-　<td><%= link_to(post.title,"/posts/#{post.id}") %></td>
-</tr>
+  <%= link_to(post.title,"/posts/#{post.id}") %><br>
+  <%= image_tag(post.image.url) if post.image.url %><br>
 <% end %>
-</table>
