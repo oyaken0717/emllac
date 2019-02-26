@@ -1,24 +1,35 @@
-# README
+■記事○
+一覧表示○
+詳細表示○
+投稿機能○
+■ユーザー○
+登録機能○
+ログイン機能○
+■画像
+アップロード機能○
+■DB ORM マッパー
+テーブルのリレーション管理
+トランズアクションの制御機能
+■ページネーション機能　
+10,50,100件表示
+■テスト機能
+単体
+統合
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version 2.3.0
 
-Things you may want to cover:
+System dependencies
 
-* Ruby version
+Configuration
 
-* System dependencies
+Database creation
 
-* Configuration
+Database initialization
 
-* Database creation
+How to run the test suite
 
-* Database initialization
+Services (job queues, cache servers, search engines, etc.)
 
-* How to run the test suite
+Deployment instructions
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+...
