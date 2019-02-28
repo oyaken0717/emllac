@@ -9,7 +9,7 @@
   <% end %>
 
   <% if action_name == "edit" %>
-    <%= f.label :プロフィール画像 %>
+    <%= f.label :プロフィール画像 %><br>
     <%= image_tag(@user.image.url) if @user.image %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
