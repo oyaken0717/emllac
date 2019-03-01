@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      ContactMailer.content_mail(@post).deliver
       redirect_to posts_path, notice:"作成ができました。"
     else
       render "new"

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem "carrierwave"
 gem "mini_magick"
 
@@ -39,6 +40,8 @@ group :development, :test do
 end
 
 group :development do
+
+  gem 'letter_opener_web'
 
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

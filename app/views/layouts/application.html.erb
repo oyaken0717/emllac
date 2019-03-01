@@ -15,15 +15,12 @@
         <%= link_to "map", posts_path %><br>
         <%= link_to "新規投稿", new_post_path %><br>
         <p>-------------------<p>
-        <%= link_to "ユーザー一覧 いる？", users_path %><br>
-      <% flash.each do |key, value| %>
-       <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
+        <%= link_to "グループメンバー", users_path %><br>
 
        <% if logged_in? %>
-        <%= current_user.name %><br>
+        <%= "#{current_user.name}さん" %><br>
         <%= link_to "プロフィール", user_path(current_user.id) %><br>
-        <%= link_to "お気に入り一覧",favorites_path(current_user.id) %><br>
+        <%= link_to "お気に入り一覧",favorites_path(current_user.id) if current_user %><br>
         <%= link_to "ログアウト", session_path(current_user.id), method: :delete %><br>
       <% else %>
         <%= link_to "新規登録", new_user_path %>
