@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :access, only: [:new, :create, :edit, :update, :destroy, :confirm]
   before_action :set_post, only: [:show, :edit, :destroy, :update]
 
   def index
@@ -56,6 +57,17 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content, :image, :image_cache)
+  end
+
+  def post_user
+    @post = Post.find(params[:id])
+    @post.user
+  end
+
+  def access
+    if current_user != post_user
+      redirect_to new_session_path
+    end
   end
 
 end

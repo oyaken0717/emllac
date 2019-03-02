@@ -1,6 +1,8 @@
 <h1>詳細</h1>
-<%= link_to "編集", edit_post_path %>
-<%= link_to "削除", post_path(@post.id), method: :delete, data:{confirm: "本当に削除しますか？"} %>
+<% if current_user == @post.user %>
+  <%= link_to "編集", edit_post_path %>
+  <%= link_to "削除", post_path(@post.id), method: :delete, data:{confirm: "本当に削除しますか？"} %>
+<% end %>
 <%= link_to "戻る", posts_path %><br><br>
 <p>投稿者</p>
 <%= image_tag (@post.user.image.url) if @post.user.image %>
