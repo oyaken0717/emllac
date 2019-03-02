@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "faker"
+
 gem "carrierwave"
 gem "mini_magick"
 
