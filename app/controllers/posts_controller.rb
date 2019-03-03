@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :access, only: [:new, :create, :edit, :update, :destroy, :confirm]
+  before_action :post_access, only: [:new]
+  before_action :access, only: [:create, :edit, :update, :destroy, :confirm]
   before_action :set_post, only: [:show, :edit, :destroy, :update]
 
   def index
@@ -70,4 +71,7 @@ class PostsController < ApplicationController
     end
   end
 
+  def post_access
+      redirect_to new_session_path unless logged_in?
+  end
 end
