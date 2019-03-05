@@ -60,13 +60,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content, :image, :image_cache)
   end
 
-  def post_user
-    @post = Post.find(params[:id])
-    @post.user
-  end
-
   def access
-    if current_user != post_user
+    if current_user != Post.find(params[:id]).user
       redirect_to new_session_path
     end
   end
