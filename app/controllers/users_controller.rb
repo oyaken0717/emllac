@@ -48,7 +48,13 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    #show画面のアドレスからid9999とか「存在しない人」に行かないように。
+    user_optional = User.find_by(id:params[:id])
+    if user_optional
+      @user = user_optional
+    else
+      redirect_to users_path
+    end
   end
 
   def user_params

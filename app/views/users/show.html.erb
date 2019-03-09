@@ -1,5 +1,5 @@
 <h1><%= @user.name %>のページ</h1><br>
-<%= link_to "編集", edit_user_path(@user.id) %>
+<%= link_to "編集", edit_user_path(@user.id||User.new) %>
 <%= link_to "戻る", users_path %><br>
 <%= image_tag (@user.image.url) if @user.image %>
 <p>名前:</p>

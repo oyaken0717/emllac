@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :post_access, only: [:new]
-  before_action :access, only: [:create, :edit, :update, :destroy, :confirm]
+  before_action :check_correct_post, only: [:edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :destroy, :update]
 
   def index
@@ -53,14 +53,20 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    post_optional = Post.find_by(id:params[:id])
+    if post_optional
+      @post = post_optional
+    else
+      redirect_to posts_path
+    end
   end
 
   def post_params
     params.require(:post).permit(:title, :content, :image, :image_cache)
   end
 
-  def access
+  def check_correct_post
+    # binding.pry
     if current_user != Post.find(params[:id]).user
       redirect_to new_session_path
     end
