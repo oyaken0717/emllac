@@ -3,8 +3,16 @@ class PostsController < ApplicationController
   before_action :check_correct_post, only: [:edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :destroy, :update]
 
+  # def index
+  #   @posts = Post.all
+  # end
   def index
     @posts = Post.all
+# ーー検索フォーム（titleで）ーーーーーーーーーーーーーーーーーーーーーーーーーー
+    if params[:post].present?
+      @posts = Post.search_title(params[:post][:title])
+    end
+    # @posts = Post.all.order(仕事の難しさレベル: :asc) if params[:仕事の難しさレベル] == "true"
   end
 
   def new
