@@ -19,6 +19,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    if params[:user].present?
+      @users = User.search_name(params[:user][:name])
+    end
   end
 
   def show

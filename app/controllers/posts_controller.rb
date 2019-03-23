@@ -74,7 +74,6 @@ class PostsController < ApplicationController
   end
 
   def check_correct_post
-    # binding.pry
     if current_user != Post.find(params[:id]).user
       redirect_to new_session_path
     end

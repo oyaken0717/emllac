@@ -7,4 +7,5 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :posts
   has_many :favorites, dependent: :destroy
+  scope :search_name, -> (user_name) { where("name LIKE ?", "%#{ user_name }%") }
 end
