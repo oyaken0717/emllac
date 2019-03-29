@@ -13,11 +13,13 @@
   <%= f.hidden_field :image_cache %>
   <%= f.file_field :image %><br>
   <%= f.label :タイトル %><br>
-  <%= f.text_field :title %>
-  <br>
+  <%= f.text_field :title %><br>
   <%= f.label :内容 %><br>
-  <%= f.text_field :content %>
-  <br>
+  <%= f.text_field :content %><br><br>
+  <% Tag.all.each do |tag| %>
+  <%= f.check_box :tag_ids, {multiple: true, checked: tag[:checked], disabled: tag[:disabled], include_hidden: false}, tag[:id] %>
+    <%= tag.name %>
+  <% end %><br><br>
 
   <%= f.submit %>
 <% end %>

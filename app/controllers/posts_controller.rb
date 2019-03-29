@@ -3,9 +3,6 @@ class PostsController < ApplicationController
   before_action :check_correct_post, only: [:edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :destroy, :update]
 
-  # def index
-  #   @posts = Post.all
-  # end
   def index
     @posts = Post.all
 # ーー検索フォーム（titleで）ーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -70,12 +67,12 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :image, :image_cache)
+    params.require(:post).permit(:title, :content, :image, :image_cache, tag_ids: [])
   end
 
   def check_correct_post
     if current_user != Post.find(params[:id]).user
-      redirect_to new_session_path
+      redirect_to posts_path
     end
   end
 

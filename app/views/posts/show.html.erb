@@ -12,6 +12,10 @@
 <%= @post.title %><br>
 <p>内容</p>
 <%= @post.content %><br>
+<p>タグ:
+<% @post.tags.each do |tag| %>
+    <%= tag.name %>
+<% end %></p>
 
 <% unless @post.user_id == current_user.id %>
   <% if @favorite.present? %>

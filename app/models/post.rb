@@ -8,4 +8,7 @@ class Post < ApplicationRecord
   has_many :favorite_users, through: :favorites, source: :user
 
   scope :search_title, -> (post_title) { where("title LIKE ?", "%#{ post_title }%") }
+
+  has_many :categories, dependent: :destroy
+  has_many :tags, through: :categories, source: :tag
 end
