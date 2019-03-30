@@ -1,0 +1,13 @@
+<%= link_to "戻る", admin_users_path %>
+<table>
+  <tr>
+    <th>イメージ</th>
+    <th>仕事名</th>
+  </tr>
+<% @user.posts.each do |user| %>
+    <tr>
+      <td><%= image_tag(user.image.url) if user.image.url %></td>
+      <td><%= link_to(user.title,"/posts/#{user.id}") %></td>
+    </tr>
+<% end %>
+</table>

@@ -28,10 +28,10 @@
                 <li><%= link_to "グループメンバー", users_path %></li>
               <% end %>
               <% if logged_in? %>
-                <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
+                <li><%= link_to "ユーザー管理画面", admin_users_path if current_user.admin? %></li>
                 <li><%= link_to "お気に入り一覧",favorites_path(current_user.id) if current_user %></li>
                 <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
-                <li><%= "#{current_user.name}さん" %></li>
+                <li><%= link_to "#{current_user.name}さん", user_path(current_user.id) %></li>
               <% else %>
                 <li><%= link_to "新規登録", new_user_path %></li>
                 <li><%= link_to "ログイン", new_session_path %></li>
