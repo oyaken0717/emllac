@@ -15,3 +15,14 @@
     <td><%= link_to "削除", admin_user_path(user.id), method: :delete, data: {confirm: "本当に削除してもいいですか？"}, class: "btn btn-primary" %></td>
   </tr>
 <% end %>
+</table>
+<% Tag.all.each do |tag| %>
+  <%= tag.name %>
+  <%= link_to "削除", tag_path(tag.id), method: :delete, data: {confirm: "本当に削除してもいいですか？"} %>
+<% end %>
+
+<%= form_with(model: Tag.new, local:true, url: tags_path) do |f| %><br>
+  <%= f.label :タグ %><br>
+  <%= f.text_field :name %><br><br>
+  <%= f.submit "作成" %><br>
+<% end %>
