@@ -16,20 +16,8 @@
 単体
 統合
 
-Ruby version 2.3.0
+###バージョン
 
-System dependencies
-
-Configuration
-
-Database creation
-
-Database initialization
-
-How to run the test suite
-
-Services (job queues, cache servers, search engines, etc.)
-
-Deployment instructions
-
-...
+Ruby 2.5.3p105
+Ruby on Rails  5.1.6.1
+psql (PostgreSQL) 11.2
