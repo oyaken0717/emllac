@@ -1,15 +1,15 @@
 # README  
-#概要  
+# 概要  
 仕事のノウハウを蓄積してわからない時に使えるようにするアプリ  
-#コンセプト  
+# コンセプト  
 万葉課題の+α(10%程)
 やる気はすごいあった。
 時間と頭がないだけで。
-#バージョン  
+# バージョン  
 Ruby 2.5.3p105  
 Ruby on Rails  5.1.6.1  
 psql (PostgreSQL) 11.2  
-#機能一覧  
+# 機能一覧  
 ログイン機能  
 ユーザー登録機能  
 メールアドレス、名前、パスワードは必須  
@@ -24,16 +24,16 @@ psql (PostgreSQL) 11.2
 仕事お気に入り機能  
 タグ投稿機能  
 タグ削除機能  
-#カタログ設計  
+# カタログ設計  
 [](https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=0)
-#テーブル定義  
+# テーブル定義  
 [](https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=1531966666)
-#ER図  
+# ER図  
 [](https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=1085121477)
-#画面遷移図  
+# 画面遷移図  
 [](https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=1092797406)
-#ワイヤーフレーム  
+# ワイヤーフレーム  
 [](https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=253675371)
-#使用予定Gem  
+# 使用予定Gem  
 画像投稿用のgem  
 ログイン時にSNSからログインできるgem  
