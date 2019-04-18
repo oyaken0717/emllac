@@ -1,4 +1,5 @@
 # README  
+#要件定義  
 # 概要  
 仕事のノウハウを蓄積してわからない時に使えるようにするアプリ  
 # コンセプト  
@@ -33,5 +34,10 @@ psql (PostgreSQL) 11.2
 # ワイヤーフレーム  
 <https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=253675371>
 # 使用予定Gem  
-画像投稿用のgem  
-ログイン時にSNSからログインできるgem  
+kaminari
+ransack
+#卒業課題
+#就業ターム
+①コメント機能
+②メッセージ機能
+③マウスオーバーするとサイズ関係なくハンバーガー機能が動く

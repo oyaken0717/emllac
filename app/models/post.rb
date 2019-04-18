@@ -11,4 +11,5 @@ class Post < ApplicationRecord
 
   has_many :categories, dependent: :destroy
   has_many :tags, through: :categories, source: :tag
+  has_many :comments, dependent: :destroy
 end
