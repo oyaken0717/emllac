@@ -27,6 +27,7 @@ psql (PostgreSQL) 11.2
 <https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=0>
 # テーブル定義  
 <https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=1531966666>
+　「Category」というモデルに関しては、PostモデルとTagモデルを多対多の関係で結合する役割とだけ今回は考えています。
 # ER図  
 <https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=1085121477>
 # 画面遷移図  
