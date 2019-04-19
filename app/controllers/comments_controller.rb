@@ -1,18 +1,16 @@
 class CommentsController < ApplicationController
   def create
-    @post = Post.new(comment_params)
+    @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.js { render :index }
       else
-        format.html { render :new }
-        format.js { render :index }
+        format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
       end
     end
   end
-
+  
   private
 
   def comment_params
