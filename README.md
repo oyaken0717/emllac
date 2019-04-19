@@ -34,10 +34,10 @@ psql (PostgreSQL) 11.2
 # ワイヤーフレーム  
 <https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=253675371>
 # 使用予定Gem  
-kaminari
-ransack
-#卒業課題
-#就業ターム
-①コメント機能
-②メッセージ機能
-③マウスオーバーするとサイズ関係なくハンバーガー機能が動く
+kaminari  
+ransack  
+#卒業課題  
+#就業ターム  
+①コメント機能  
+②メッセージ機能  
+③マウスオーバーするとサイズ関係なくハンバーガー機能が動く  
