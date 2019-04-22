@@ -54,7 +54,7 @@ class PostsController < ApplicationController
 
   def confirm
     @post = current_user.posts.build(post_params)
-    render new if @post.invalid?
+    render :new if @post.invalid?
   end
 
   private
@@ -69,7 +69,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :image, :image_cache, tag_ids: [])
+    params.require(:post).permit(:title, :content, :image, :image_cache, :group, tag_ids: [])
   end
 
   def check_correct_post

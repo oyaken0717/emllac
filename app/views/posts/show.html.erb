@@ -15,7 +15,7 @@
 <p>タグ</p>
 <% @post.tags.each do |tag| %>
     <%= tag.name %>
-<% end %>
+<% end %><br><br>
 
 <% unless @post.user_id == current_user.id %>
   <% if @favorite.present? %>

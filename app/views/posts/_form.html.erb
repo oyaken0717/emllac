@@ -20,7 +20,12 @@
   <%= f.check_box :tag_ids, {multiple: true, checked: tag[:checked], disabled: tag[:disabled], include_hidden: false}, tag[:id] %>
     <%= tag.name %>
   <% end %><br><br>
-
+  <%= f.label :グループ %><br>
+  <div class="group-name">
+    <%= @group.name %>
+  </div>
+  <% f.hidden_field :group_id, value: @group.id %>
+  <br><br>
   <%= f.submit %>
 <% end %>
 <%= link_to "戻る", posts_path %>

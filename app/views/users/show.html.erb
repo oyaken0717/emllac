@@ -1,26 +1,33 @@
 <h1><%= @user.name %>のページ</h1><br>
-<%# if current_user == @post.user %>
-<%= link_to "編集", edit_user_path(@user.id||User.new) %>
-<%# end %>
-<%= link_to "戻る", users_path %><br>
-<%= image_tag (@user.image.url) if @user.image %>
-<p>名前:</p>
-<%= @user.name %></p><br>
-<p>メールアドレス:</p>
-<%= @user.email %><br>
-
-<li><%= link_to "callmeとは", about_path %></li>
-<% if logged_in? %>
-  <li><%= link_to "map", posts_path %></li>
-  <li><%= link_to "新規投稿", new_post_path %></li>
-  <li><%= link_to "グループメンバー", users_path %></li>
+<% if current_user == @user %>
+  <%= link_to "編集", edit_user_path(@user.id||User.new) %>
 <% end %>
+<%#= link_to "戻る", users_path %><br>
+<%= image_tag (@user.image.url) if @user.image %>
+<!-- <p>名前:</p> -->
+<%#= @user.name %><br>
+<p>メールアドレス:</p>
+<%= @user.email %><br/>
+<h1>所属グループ</h1><br/>
+<% @user.groups.each do |group| %>
+  <%= group.name %>
+  <%= link_to "詳細", group_path(group.id) %>
+<% end %>
+<br/>
+
 <% if logged_in? %>
-  <li><%= link_to "ユーザー管理画面", admin_users_path if current_user.admin? %></li>
-  <li><%= link_to "お気に入り一覧",favorites_path(current_user.id) if current_user %></li>
+  <!-- <li><%#= link_to "参加グループ一覧", groups_path %></li> -->
+  <!-- <li><%#= link_to "P仕事一覧", group_posts_path %></li> -->
+
+  <!-- <li><%#= link_to "Gグループメンバー", users_path %></li> -->
+<%# end %>
+<%# if logged_in? %>
+  <li><%= link_to "全グループ一覧画面", groups_path %></li>
+  <li><%= link_to "全ユーザー管理画面", admin_users_path if current_user.admin? %></li>
+  <!-- <li><%#= link_to "Pお気に入り一覧",favorites_path(current_user.id) %></li> -->
+  <!-- <li><%#= link_to "#{current_user.name}さん", user_path(current_user.id) %></li> -->
   <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
-  <li><%= link_to "#{current_user.name}さん", user_path(current_user.id) %></li>
-<% else %>
-  <li><%= link_to "新規登録", new_user_path %></li>
-  <li><%= link_to "ログイン", new_session_path %></li>
+<%# else %>
+  <!-- <li><%#= link_to "新規登録", new_user_path %></li> -->
+  <!-- <li><%#= link_to "ログイン", new_session_path %></li> -->
 <% end %>

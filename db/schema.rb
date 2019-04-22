@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190420060409) do
+ActiveRecord::Schema.define(version: 20190421072744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 20190420060409) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|
@@ -77,6 +86,8 @@ ActiveRecord::Schema.define(version: 20190420060409) do
     t.text "title"
     t.text "image"
     t.bigint "user_id"
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_posts_on_group_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -99,7 +110,9 @@ ActiveRecord::Schema.define(version: 20190420060409) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "groups", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "posts", "groups"
   add_foreign_key "posts", "users"
 end

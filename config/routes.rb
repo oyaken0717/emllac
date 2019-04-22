@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   get '/about', to: "home#about"
   resources :sessions, only: [:new, :create, :show, :destroy]
   resources :users
-  resources :posts do
-    collection do
-      post :confirm
-    end
-    resources :comments
-  end
+  # resources :posts do
+  #   collection do
+  #     post :confirm
+  #   end
+  #   resources :comments
+  # end
 
   resources :favorites, only:[:create, :index, :destroy]
   resources :contacts
@@ -22,5 +22,13 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  resources :groups
+  resources :groups do
+    resources :posts do
+      collection do
+        post :confirm
+      end
+      resources :comments
+    end
+  end
+  resources :members, only: [:index, :create, :show, :destroy]
 end

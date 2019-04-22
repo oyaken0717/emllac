@@ -10,7 +10,8 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
+    # @group = Group.new(group_params)
+    @group = current_user.groups.build(group_params)
     if @group.save
       redirect_to groups_path, notice: "グループを作成しました！"
     else
@@ -20,6 +21,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @member = current_user.members.find_by(group_id: @group.id)
   end
 
   def edit

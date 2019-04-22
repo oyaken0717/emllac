@@ -8,5 +8,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :favorites, dependent: :destroy
   has_many :comments
+  has_many :members, dependent: :destroy
+  has_many :groups
   scope :search_name, -> (user_name) { where("name LIKE ?", "%#{ user_name }%") }
+
 end
