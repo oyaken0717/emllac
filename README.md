@@ -35,8 +35,8 @@ psql (PostgreSQL) 11.2
 # ワイヤーフレーム  
 <https://docs.google.com/spreadsheets/d/1VLm0Xd-GjCxJ2D1lQsZ1Kt3HnG4hkJFJ5fLYwR07RBg/edit#gid=253675371>
 # 使用予定Gem  
-kaminari  
-ransack    
+carrierwave
+mini_magick
 # 就業ターム  
 ①コメント機能  
 ②メッセージ機能  
