@@ -11,6 +11,10 @@
   <% else %>
     <%= link_to '参加する', members_path(group_id: @group.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
-<% end %>
+<% end %><br/><br/>
 
-<%= link_to "新規投稿", new_group_post_path(group_id: @group.id) %>
+<%= link_to "仕事一覧", group_posts_path(group_id: @group.id) %><br/><br/>
+
+<% @group.members.each do |member| %>
+  <%= member.user.name %><br/>
+<% end %>

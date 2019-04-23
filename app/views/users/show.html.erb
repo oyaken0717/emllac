@@ -11,7 +11,7 @@
 <h1>所属グループ</h1><br/>
 <% @user.groups.each do |group| %>
   <%= group.name %>
-  <%= link_to "詳細", group_path(group.id) %>
+  <%= link_to "詳細", group_path(group.id) %><br/>
 <% end %>
 <br/>
 

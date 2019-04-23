@@ -3,7 +3,7 @@
 <%= link_to "新規作成 ", new_group_post_path %>
 <%# -----レベルの小さい順に並べる------------------------------------------------ %>
 <%# -----検索フォーム---------------------------------------------------------- %>
-<%= form_with(model: @posts, method: :get, local: true, url: posts_path) do |f| %>
+<%= form_with(model: @posts, method: :get, local: true, url: group_posts_path) do |f| %>
   <%#= f.label :title_search, '仕事'%>
   <%= f.text_field :title %>
   <%= f.submit '検索' %>
